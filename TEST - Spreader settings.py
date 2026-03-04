@@ -16,7 +16,7 @@ ACRE_M2 = 4046.86
 VALVE_SETTING = 30        # %
 PWM_SETTING = 1500        # PWM
 DISCHARGE_RATE = 10.0     # kg/min
-SWATH_WIDTH = 7.5         # meters
+SWATH_WIDTH = 6         # meters
 
 # -----------------------
 # Inputs
@@ -98,6 +98,7 @@ st.caption(
     "Speed = (A_ideal × 4046.86) / (Swath × SprayTime)\n\n"
     "Turn loss fixed at 2% per turn."
 )
+
 
 
 
