@@ -68,7 +68,7 @@ A_real = area
 A_ideal = A_real / ((1 - TURN_LOSS) ** turns)
 
 # Spray time (seconds)
-t_spray = ((total_dispense / DISCHARGE_RATE) * 60) + (turns * 4)
+t_spray = ((total_dispense / DISCHARGE_RATE) * 60) - (turns * 4)
 
 # Required speed (m/s)
 v_required = (A_ideal * ACRE_M2) / (SWATH_WIDTH * t_spray)
@@ -98,6 +98,7 @@ st.caption(
     "Speed = (A_ideal × 4046.86) / (Swath × SprayTime)\n\n"
     "Turn loss fixed at 2% per turn."
 )
+
 
 
 
