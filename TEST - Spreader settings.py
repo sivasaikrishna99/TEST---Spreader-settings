@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Agri Drone Spreading Calculator", layout="centered")
-st.title("🚁 Spreader settings")
+st.title("🚁 TEST Spreader settings")
 st.caption("Turn-loss based spreading model")
 
 st.divider()
@@ -98,6 +98,7 @@ st.caption(
     "Speed = (A_ideal × 4046.86) / (Swath × SprayTime)\n\n"
     "Turn loss fixed at 2% per turn."
 )
+
 
 
 
