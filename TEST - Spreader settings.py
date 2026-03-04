@@ -51,7 +51,13 @@ turns = st.number_input(
     value=11,
     step=1
 )
-
+overlap = st.number_input(
+    "Overlap percentage (%)",
+    min_value=0,
+    max_value=100,
+    value=0,
+    step=1
+)
 st.divider()
 
 # -----------------------
@@ -70,8 +76,11 @@ A_ideal = A_real / ((1 - TURN_LOSS) ** turns)
 # Spray time (seconds)
 t_spray = ((total_dispense / DISCHARGE_RATE) * 60) - (turns * 4)
 
+#overlap
+NEW_SWATH_WIDTH = SWATH_WIDTH - (2 * (overlap / 100))
+                                     
 # Required speed (m/s)
-v_required = (A_ideal * ACRE_M2) / (SWATH_WIDTH * t_spray)
+v_required = (A_ideal * ACRE_M2) / (NEW_SWATH_WIDTH * t_spray)
 
 # Round to 1 decimal
 v_required = round(v_required, 1)
@@ -98,6 +107,7 @@ st.caption(
     "Speed = (A_ideal × 4046.86) / (Swath × SprayTime)\n\n"
     "Turn loss fixed at 2% per turn."
 )
+
 
 
 
